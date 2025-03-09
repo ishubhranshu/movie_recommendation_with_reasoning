@@ -30,7 +30,7 @@ This project is a complete movie recommendation system that:
 ## Examples
 
 
-[![Video Thumbnail](assets/demo.png)](https://www.dropbox.com/scl/fi/a6br40kgw2b33ni4dpkdk/demo.hevc?rlkey=z943qdr48l128sqfkgnsrmihf&st=s7swyvfl&dl=0)
+[![Video Thumbnail](https://www.dropbox.com/scl/fi/a6br40kgw2b33ni4dpkdk/demo.hevc?rlkey=z943qdr48l128sqfkgnsrmihf&st=s7swyvfl&dl=0)
 ![Results 1](assets/screencapture-127-0-0-1-5000-results-2025-03-09-10_33_10.png)
 ![Results 1](assets/screencapture-127-0-0-1-5000-results-2025-03-09-10_34_36.png)
 
