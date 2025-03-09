@@ -29,6 +29,10 @@ This project is a complete movie recommendation system that:
 
 ## Examples
 
+![Alt text](assets/screencapture-127-0-0-1-5000-results-2025-03-09-10_33_10.png)
+![Alt text](assets/screencapture-127-0-0-1-5000-results-2025-03-09-10_34_36.png)
+
+
 ## File Structure
 
 ```plaintext
