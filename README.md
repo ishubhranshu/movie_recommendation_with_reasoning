@@ -29,7 +29,7 @@ This project is a complete movie recommendation system that:
 
 ## Examples
 
-![Results 1](assets/demo.hevc)
+![Results 1](assets/demo.mp4)
 ![Results 1](assets/screencapture-127-0-0-1-5000-results-2025-03-09-10_33_10.png)
 ![Results 1](assets/screencapture-127-0-0-1-5000-results-2025-03-09-10_34_36.png)
 
