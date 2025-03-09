@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Recommendation</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+      background: #151515;
+      color: #e0e0e0;
+    }
+    h1 {
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: #ffffff;
+    }
+    p.tagline {
+      margin-top: 0;
+      margin-bottom: 40px;
+      color: #aaaaaa;
+      font-size: 1.1rem;
+    }
+    .search-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      width: 60%;
+      margin: 0 auto;
+    }
+    .subcard {
+      background-color: #2a2a2a;
+      border: 1px solid #444;
+      border-radius: 4px;
+      padding: 0;
+      display: flex;
+      align-items: stretch;
+    }
+    .subcard input[type="text"],
+    .subcard button {
+      box-sizing: border-box;
+      padding: 10px 12px;
+      font-size: 1rem;
+      border: none;
+      outline: none;
+    }
+    .subcard input[type="text"] {
+      background: transparent;
+      color: #ffffff;
+      flex: 1;
+    }
+    .subcard button {
+      background-color: #4285f4;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    .subcard button:hover {
+      background-color: #5c9fff;
+    }
+    input[type="text"]::placeholder {
+      color: #888;
+    }
+    /* Custom suggestion dropdown */
+    #autocomplete-results {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #2a2a2a;
+      border: 1px solid #444;
+      border-top: none;
+      z-index: 100;
+      max-height: 600px;
+      overflow-y: auto;
+    }
+    .suggestion {
+      display: flex;
+      align-items: center;
+      min-height: 60px;
+      padding: 16px 12px;
+      cursor: pointer;
+      text-align: left;
+      color: #ffffff;
+      border-bottom: 1px solid #444;
+    }
+    .suggestion:last-child {
+      border-bottom: none;
+    }
+    .suggestion img {
+      height: 100px;
+      object-fit: cover;
+      margin-right: 10px;
+      border-radius: 2px;
+    }
+    .suggestion:hover {
+      background-color: #3a3a3a;
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .search-container {
+        flex-direction: column;
+      }
+      .subcard {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Movie Recommendation</h1>
+  <p class="tagline">with Reasoning</p>
+  
+  <form action="/results" method="get" id="search-form" autocomplete="off">
+    <div class="search-container">
+      <div class="subcard" style="flex:1; position: relative;">
+        <input type="text" name="title" id="title-input" placeholder="Enter movie title (e.g. Toy Story)" required>
+        <div id="autocomplete-results"></div>
+      </div>
+      <div class="subcard">
+        <button type="submit">Search</button>
+      </div>
+    </div>
+  </form>
+  
+  <script>
+    const inputField = document.getElementById('title-input');
+    const resultsContainer = document.getElementById('autocomplete-results');
+
+    inputField.addEventListener('input', function(e) {
+      const query = e.target.value;
+      resultsContainer.innerHTML = "";
+      if (query.length > 0) {
+        fetch('/autocomplete?query=' + encodeURIComponent(query))
+          .then(response => response.json())
+          .then(data => {
+            data.suggestions.forEach(movie => {
+              const div = document.createElement('div');
+              div.className = 'suggestion';
+              const img = document.createElement('img');
+              img.src = movie.poster_path && movie.poster_path.trim() ? movie.poster_path : "static/posters/default.jpg";
+              const span = document.createElement('span');
+              span.textContent = movie.title;
+              div.appendChild(img);
+              div.appendChild(span);
+              div.addEventListener('click', function() {
+                inputField.value = movie.title;
+                resultsContainer.innerHTML = "";
+              });
+              resultsContainer.appendChild(div);
+            });
+          })
+          .catch(error => console.error('Error fetching autocomplete data:', error));
+      }
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!document.getElementById('search-form').contains(e.target)) {
+        resultsContainer.innerHTML = "";
+      }
+    });
+  </script>
+</body>
+</html>
