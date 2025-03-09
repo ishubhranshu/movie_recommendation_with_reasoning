@@ -32,7 +32,7 @@ This project is a complete movie recommendation system that:
 
 
 
-![](https://github.com/user-attachments/assets/77f8ce50-50d8-4d84-b723-46450d69d8d1)
+[![](https://github.com/user-attachments/assets/77f8ce50-50d8-4d84-b723-46450d69d8d1)](https://github.com/user-attachments/assets/2d0b1fb4-a858-4314-9928-cefb10708969)
 
 
 
