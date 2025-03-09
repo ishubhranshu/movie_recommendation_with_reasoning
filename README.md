@@ -6,14 +6,8 @@ A Flask-based movie recommendation system that leverages deep overview embedding
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [File Structure](#file-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Customization](#customization)
 - [Examples](#examples)
-- [Troubleshooting](#troubleshooting)
-- [License](#license)
+- [File Structure](#file-structure)
 
 ## Introduction
 
@@ -32,6 +26,8 @@ This project is a complete movie recommendation system that:
 - **Dynamic Styling:** Extract dominant colors from movie posters to style the recommendation cards dynamically.
 - **Modular Codebase:** Well-organized code separated into different modules for maintainability.
 - **Responsive UI:** A clean, responsive web interface with autocomplete suggestions and animated loading skeletons.
+
+## Examples
 
 ## File Structure
 
