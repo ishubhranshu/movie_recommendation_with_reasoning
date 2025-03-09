@@ -29,15 +29,15 @@ This project is a complete movie recommendation system that:
 
 ## Examples
 
-
-
-
 [![](https://github.com/user-attachments/assets/77f8ce50-50d8-4d84-b723-46450d69d8d1)](https://github.com/user-attachments/assets/2d0b1fb4-a858-4314-9928-cefb10708969)
 
-
-
-
+---------------------------------------------------------------------------------------------------------------------------------------------
+**Example Result Page 1**
+<br>
 ![Results 1](assets/screencapture-127-0-0-1-5000-results-2025-03-09-10_33_10.png)
+
+**********************************************
+**Example Result Page 2**
 ![Results 1](assets/screencapture-127-0-0-1-5000-results-2025-03-09-10_34_36.png)
 
 
