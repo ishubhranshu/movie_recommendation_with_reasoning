@@ -2,6 +2,13 @@
 
 A Flask-based movie recommendation system that leverages deep overview embeddings, similarity functions, and a local Llama 3.2 reasoning model to provide personalized movie suggestions with natural language explanations.
 
+## Deployed Demo
+
+
+🔗 **Live Site:** [https://mrwr.netlify.app/](https://mrwr.netlify.app/)
+<br>
+> The results might differ as the demo results are only from the fraction of movies that were taken into consideration for demo.
+
 ## Table of Contents
 
 - [Introduction](#introduction)
