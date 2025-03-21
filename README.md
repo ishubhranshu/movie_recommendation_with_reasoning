@@ -1,4 +1,4 @@
-# Movie Recommendation System
+# Movie Recommendation System with **Reasoning**
 
 A Flask-based movie recommendation system that leverages deep overview embeddings, similarity functions, and a local Llama 3.2 reasoning model to provide personalized movie suggestions with natural language explanations.
 
